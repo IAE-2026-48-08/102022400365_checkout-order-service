@@ -1,0 +1,22 @@
+type Query {
+    "Ambil semua order, bisa filter by status"
+    orders(status: String @eq): [Order!]! @all
+
+    "Ambil detail order berdasarkan ID"
+    order(id: ID! @eq): Order @find
+}
+
+type Order {
+    id: ID!
+    order_code: String!
+    customer_name: String!
+    customer_email: String!
+    items: String!
+    subtotal: Float!
+    discount: Float!
+    total: Float!
+    status: String!
+    notes: String
+    created_at: String
+    updated_at: String
+}
