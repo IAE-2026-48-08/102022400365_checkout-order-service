@@ -1,0 +1,14 @@
+services:
+  checkout-order-service:
+    build: .
+    container_name: checkout-order-service
+
+    ports:
+      - "9000:9000"
+
+    volumes:
+      - .:/var/www
+
+    working_dir: /var/www
+
+    command: php artisan serve --host=0.0.0.0 --port=9000
